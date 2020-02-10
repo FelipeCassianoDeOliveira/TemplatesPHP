@@ -1,5 +1,20 @@
 <?php 
 
+	include '_conection.php';
+
+	// valores dos atributos
+	$FirstName = $_POST['userName'];
+	$LastName = $_POST['userLastName'];
+	$Login = $_POST['userLogin'];
+	$email = $_POST['email'];
+	$password = $_POST['userPass'];
+	$status = "invativo";
+		
+	
+	$sql = "INSERT INTO loja.client_user (firstName,lastName,login,email,passwordUser,status)
+		values ('$FirstName','$LastName','$Login','$email','$password','$status')";
+
+	$insert = mysqli_query($conection,$sql);
 
 ?>
  <!-- bootstrap 4-->
